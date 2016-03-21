@@ -12,8 +12,29 @@
     tools:context="ua.kyselov.android.beeradviser.FindBeerActivity"
     tools:showIn="@layout/activity_find_beer">
 
-    <TextView
+    <Spinner
+        android:id="@+id/color"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:entries="@array/beer_colors">
+    </Spinner>
+    <Button
+        android:layout_below="@+id/color"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/find_beer"
+        android:layout_alignLeft="@id/color"
+        android:id="@+id/findBeer"
+        android:onClick="onClickFindBeer"/>
+    <TextView
+        android:id="@+id/brands"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/findBeer"
+        android:layout_alignLeft="@id/findBeer"
+        android:layout_marginTop="18dp"
+        android:text="@string/brands" />
 </RelativeLayout>
