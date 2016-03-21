@@ -13,13 +13,16 @@ import android.widget.TextView;
 
 public class FindBeerActivity extends AppCompatActivity {
 
-    TextView brands = (TextView)findViewById(R.id.brands);
-    Spinner color = (Spinner)findViewById(R.id.color);
-
+    TextView brands;
+    Spinner color;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_find_beer);
+
+        brands = (TextView)findViewById(R.id.brands);
+        color = (Spinner)findViewById(R.id.color);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -56,6 +59,7 @@ public class FindBeerActivity extends AppCompatActivity {
     }
 
     public void onClickFindBeer(View view){
-
+        String beerType = String.valueOf(color.getSelectedItem());
+        brands.setText(beerType);
     }
 }
